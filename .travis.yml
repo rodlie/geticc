@@ -1,0 +1,17 @@
+language: cpp
+compiler: g++
+dist: trusty
+sudo: required
+
+before_install:
+  - sudo apt-get update
+
+install:
+  - sudo apt-get install libfltk1.3-dev cmake
+  
+script:
+  - make -f Makefile.unix
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
